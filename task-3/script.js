@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
-        closeBtn.click(); // close when clicking outside image
+        closeBtn.click(); 
       }
     });
   });
