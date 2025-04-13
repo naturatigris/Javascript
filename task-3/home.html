@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🌟 Modern Image Gallery</h1>
+  </header>
+
+  <div class="gallery">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa2zM4e5YW6M3AYXUszdTjQpptr_t89BoqMA&s" 
+           data-full="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa2zM4e5YW6M3AYXUszdTjQpptr_t89BoqMA&s" 
+           class="thumbnail" alt="Image 1" />
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsGjC8DqJdqXiRawASU-kJV7G2oLD-qPyMYA&s" 
+           data-full="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsGjC8DqJdqXiRawASU-kJV7G2oLD-qPyMYA&s" 
+           class="thumbnail" alt="Image 2" />
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG9NxyToGzIorMHHadD84Q9R-_Ossmw9reTg&s" 
+           data-full="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG9NxyToGzIorMHHadD84Q9R-_Ossmw9reTg&s" 
+           class="thumbnail" alt="Image 3" />
+    </div>
+  </div>
+
+  <div class="modal hidden">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
