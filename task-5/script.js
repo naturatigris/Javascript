@@ -1,4 +1,3 @@
-// Define quiz questions and options
 const quizData = [
     {
       question: "What is the capital of France?",
@@ -17,19 +16,16 @@ const quizData = [
     },
   ];
   
-  // Initialize variables
   let currentQuestionIndex = 0;
   let score = 0;
   
   
-  // Select elements
   const questionText = document.getElementById("questionText");
   const optionsList = document.getElementById("optionsList");
   const nextBtn = document.getElementById("nextBtn");
   const scoreDisplay = document.getElementById("scoreDisplay");
   
     
-    // Display new options
     function loadQuestion() {
         const currentQuestion = quizData[currentQuestionIndex];
         questionText.textContent = currentQuestion.question;
@@ -41,11 +37,9 @@ const quizData = [
           li.textContent = option;
           
           li.addEventListener("click", () => {
-            // Remove 'selected' from all options
             const allOptions = optionsList.querySelectorAll("li");
             allOptions.forEach((item) => item.classList.remove("selected"));
       
-            // Highlight the selected one
             li.classList.add("selected");
       
             handleOptionClick(option);
@@ -64,23 +58,20 @@ const quizData = [
       score++;
     }
   
-    // Disable options after selection
     const options = optionsList.querySelectorAll("li");
     options.forEach((option) => {
-      option.style.pointerEvents = "none"; // Disable further clicks
+      option.style.pointerEvents = "none"; 
     });
   
-    nextBtn.style.display = "block"; // Show the Next button
+    nextBtn.style.display = "block"; 
   }
   
-  // Move to the next question
   nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
   
-    // Check if there are more questions
     if (currentQuestionIndex < quizData.length) {
       loadQuestion();
-      nextBtn.style.display = "none"; // Hide the Next button until an option is selected
+      nextBtn.style.display = "none"; 
     } else {
       showResults();
     }
@@ -96,5 +87,5 @@ const quizData = [
   
   // Initialize the quiz
   loadQuestion();
-  nextBtn.style.display = "none"; // Hide the Next button until an option is selected
+  nextBtn.style.display = "none"; 
   
