@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart</title>
+  <link rel="stylesheet" href="Cart.css">
+  <link rel="stylesheet" href="Navbar.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="Navbar">
+    <a href="home.html">
+      <img src="../assets/logo.png" alt="Logo" class="logo">
+    </a>
+    <ul class="Navbar-menu">
+      <li><a href="home.html" id="home-link" class="active">home</a></li>
+      <li><a href="#explore-menu" id="menu-link">menu</a></li>
+      <li><a href="#app-download" id="mobile-app-link">mobile-app</a></li>
+      <li><a href="#footer" id="contact-us-link">contact us</a></li>
+    </ul>
+    <div class="Navbar-right">
+      <img src="../assets/search_icon.png" alt="Search Icon">
+      <div class="Navbar-search-icon">
+        <a href="cart.html">
+          <img src="../assets/basket_icon.png" alt="Basket Icon">
+        </a>
+        <div id="cart-dot" class="dot"></div>
+      </div>
+      <button id="sign-in-btn">sign in</button>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Section -->
+  <section id="shopping-cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items" class="cart-items"></div>
+    
+    <div class="cart-total-summary">
+      <div id="total-price" class="cart-total-price"></div>
+      <p>Delivery Fee: <span id="delivery-fee">$0</span></p>
+      <p><strong>Total: </strong><span id="total">$0</span></p>
+      <button id="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <div class="cart-promocode">
+      <p>If you have a promo code, enter it here</p>
+      <div class="cart-promocode-input">
+        <input type="text" placeholder="Promo code" />
+        <button>Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cart-items');
+      if (!cartContainer) return;
+
+      cartContainer.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `<p>Your cart is empty.</p>`;
+        document.getElementById('total-price').innerHTML = '';
+        document.getElementById('total').innerText = '$0';
+        return;
+      }
+
+      cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" width="80" />
+          <p><strong>${item.name}</strong></p>
+          <p>Price: $${item.price}</p>
+          <p>Quantity: ${item.quantity}</p>
+          <button onclick="removeFromCart(${item.id})">Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
+      });
+
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.quantity;
+      });
+
+      document.getElementById('total-price').innerHTML = `<h3>Subtotal: $${total.toFixed(2)}</h3>`;
+      document.getElementById('total').innerText = `$${total.toFixed(2)}`;
+    }
+
+    function removeFromCart(id) {
+      const index = cart.findIndex(item => item.id === id);
+      if (index !== -1) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+      }
+    }
+
+    updateCartDisplay();
+  </script>
+
+</body>
+</html>

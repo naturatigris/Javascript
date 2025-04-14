@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Simulation</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="Navbar.css">
+  <link rel="stylesheet" href="header.css">
+
+
+</head>
+<body>
+    <div class="Navbar">
+        <!-- Logo Section -->
+        <a href="home.html">
+          <img src="../assets/logo.png" alt="Logo" class="logo">
+        </a>
+    
+        <!-- Navbar Menu -->
+        <ul class="Navbar-menu">
+          <li><a href="home.html" id="home-link" class="active">home</a></li>
+          <li><a href="#explore-menu" id="menu-link">menu</a></li>
+          <li><a href="#app-download" id="mobile-app-link">mobile-app</a></li>
+          <li><a href="#footer" id="contact-us-link">contact us</a></li>
+        </ul>
+    
+        <!-- Navbar Right Section -->
+        <div class="Navbar-right">
+          <img src="../assets/search_icon.png" alt="Search Icon">
+    
+          <div class="Navbar-search-icon">
+            <a href="cart.html">
+              <img src="../assets/basket_icon.png" alt="Basket Icon">
+            </a>
+            <!-- Cart indicator -->
+            <div id="cart-dot" class="dot"></div>
+          </div>
+    
+          <!-- Sign In Button -->
+          <button id="sign-in-btn">sign in</button>
+        </div>
+      </div>
+      <div class='header'>
+        <div class='header-contents'>
+              <h2>Order your favourite food here</h2>
+              <p>Craving something delicious? Browse our menu and get fresh, flavorful dishes delivered right to your door. Satisfaction is just a tap away!</p>
+              <button>View Menu</button>
+          </div>
+        
+      </div>
+  
+    
+
+  <!-- Product Listing Section -->
+  <section id="product-listing">
+    <input type="text" id="search-bar" placeholder="Search for products..." />
+    <div id="filters">
+      <button onclick="filterProducts('all')">All Products</button>
+      <button onclick="filterProducts('salad')">Salad</button>
+      <button onclick="filterProducts('rolls')">Rolls</button>
+      <button onclick="filterProducts('dessert')">Desserts</button>
+      <button onclick="filterProducts('sandwich')">Sandwhich</button>
+
+
+    </div>
+    <div id="products" class="product-container"></div>
+  </section>
+
+  <!-- Shopping Cart Section -->
+
+  <script src="home.js"></script>
+</body>
+</html>
