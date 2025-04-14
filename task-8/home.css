@@ -1,0 +1,428 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+html {
+    scroll-behavior: smooth;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+  }
+  
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: #004AAD;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+main{
+    grid-area: main;
+    height: fit-content;
+
+}
+footer {
+    grid-area: footer;
+  }
+  
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+nav .dropdown-button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+    justify-self: flex-start;
+       
+}
+.dropdown,.sub-dropdown{
+    position: relative;
+}
+.dropdown-content {
+    display:none;
+    position: absolute;
+
+    background-color: #f0f4ff;
+
+    width: 250px;
+    height: fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  
+}
+  .sub-dropdown-content{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100px; /* Open to the LEFT */
+    height: fit-content;
+
+
+    background-color: #f0f4ff;
+
+
+    width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.Company_name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.header-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 20px; /* Optional: space between items */
+  
+}
+.header-right a {
+    color: white;
+    
+    text-decoration: none;
+    
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.header-right .dropdown-button{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+
+
+
+}
+
+ .dropdown:hover .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.sub-dropdown .dropdown-button{
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+
+}
+.sub-dropdown:hover .sub-dropdown-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a{
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+}
+.header-right a:hover {
+    color: #FFC107;
+}
+
+main {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.home{
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center/cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    padding: 20px;
+    justify-content: center;  
+    align-items: center;     
+    text-align: center;
+    position: relative;
+
+
+
+}
+
+.main-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    max-width: 600px;
+    }
+
+.main-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: 0.13s;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1);
+}
+.trending-courses {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.trending-courses h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    color: #004AAD;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+}
+.modal-checkbox {
+    display: none;
+  }
+  
+  .modal-overlay,
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+  }
+  
+  .modal-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+  }
+  
+  .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 101;
+  }
+  
+  /* Show modal when checkbox is checked */
+  .modal-checkbox:checked ~ .modal-overlay,
+  .modal-checkbox:checked ~ .modal {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Modal Animation */
+  .modal-checkbox:checked ~ .modal {
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Buttons */
+  .open-modal-btn,
+  .enroll-btn,
+  .close-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    font-size: 24px;
+    color: #333;
+  }
+  .course-search{
+    width: 100%;
+    margin: 0;
+    border-radius: 5px;
+  }
+  .tabs-container {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+
+
+
+    justify-self: center;
+    max-width: 600px;
+    height: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tab {
+    padding: 10px ;
+    cursor: pointer;
+    background: #eee;
+    border-radius: 10px;
+    margin: 5px;
+    margin-bottom: 0;
+
+  }
+  .tab-content .tab-panel {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    list-style: armenian;
+    text-align: left;
+    justify-self: center;
+    margin: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease, height 0.5s ease, padding 0.5s ease;
+  
+  }
+  .course-search h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    justify-self: center;
+
+  }
+  #tab1:checked ~ .tab-content #content1,  #tab2:checked ~ .tab-content #content2
+,  #tab3:checked ~ .tab-content #content3{
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  
+}
+  
+  
+#home, #carousel,#collapsible, #about, #courses, #search {
+  height: 100vh;
+  display: none;
+}
+
+
+
+@media(max-width: 600px) {
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 1rem; 
+    }
+    .card{
+        width: 100%;
+    }
+  }
+    

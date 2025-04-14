@@ -1,0 +1,96 @@
+.carousel{
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+}
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    height: 400px;
+    margin: auto;
+  }
+  
+  .mySlides {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 700px;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 0;
+  }
+  
+  .mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+    /* Auto animation */
+  .slide{
+    animation: fadeSlide 9s infinite;
+    animation-delay: 0s;
+  }
+  .slide2 {
+    animation: fadeSlide 9s infinite;
+    animation-delay: 3s;
+  }
+  .slide3 {
+    animation: fadeSlide 9s infinite;
+    animation-delay: 6s;
+  }
+  
+  @keyframes fadeSlide {
+    0%, 100% { opacity: 0; z-index: 0; }
+    10%, 30% { opacity: 1; z-index: 1; }
+    40%, 90% { opacity: 0; z-index: 0; }
+  }
+  
+  .mySlides:target {
+    display: block;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    animation: none !important;
+    }
+  
+  /* Default if nothing is targeted */
+  html:not(:has(:target)) .slide1 {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  /* Dot styles */
+  .dot-container {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+      
+  .dot:hover {
+    background-color: #717171;
+  }
+  
+  .text {
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+  }
+  .numbertext{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  
+  }
