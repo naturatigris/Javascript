@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="questions.css"/>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Questions</h1>
+    <div id="questionContainer2">
+    </div>
+    <button id="addQuestionBtn" class="add-question-btn" >Add Question</button>
+    <div id="questionFormContainer" class="form-container" style="display: none;">
+        <form id="questionForm">
+          <label for="questionInput">Question:</label>
+          <input type="text" id="questionInput" name="question" required />
+          
+          <label for="option1">Option 1:</label>
+          <input type="text" id="option1" name="option1" required />
+          
+          <label for="option2">Option 2:</label>
+          <input type="text" id="option2" name="option2" required />
+          
+          <label for="option3">Option 3:</label>
+          <input type="text" id="option3" name="option3" required />
+          
+          <label for="option4">Option 4:</label>
+          <input type="text" id="option4" name="option4" required />
+          
+          <label for="correctAnswer">Correct Answer:</label>
+          <input type="text" id="correctAnswer" name="correctAnswer" required />
+          
+          <button type="submit">Add Question</button>
+          <button type="button" id="cancelBtn" >Cancel</button>
+        </form>
+      </div>
+  
+
+    </div>
+    
+  <script type='module' src="quiz.js"></script>
+</body>
+</html>

@@ -1,21 +1,4 @@
-const quizData = [
-    {
-      question: "What is the capital of France?",
-      options: ["Berlin", "Madrid", "Paris", "Lisbon"],
-      correctAnswer: "Paris",
-    },
-    {
-      question: "What is 2 + 2?",
-      options: ["3", "4", "5", "6"],
-      correctAnswer: "4",
-    },
-    {
-      question: "Which planet is known as the Red Planet?",
-      options: ["Earth", "Mars", "Jupiter", "Saturn"],
-      correctAnswer: "Mars",
-    },
-  ];
-  
+const quizData = JSON.parse(localStorage.getItem("quizData")) || [];
   let currentQuestionIndex = 0;
   let score = 0;
   
@@ -24,8 +7,7 @@ const quizData = [
   const optionsList = document.getElementById("optionsList");
   const nextBtn = document.getElementById("nextBtn");
   const scoreDisplay = document.getElementById("scoreDisplay");
-  
-    
+   
     function loadQuestion() {
         const currentQuestion = quizData[currentQuestionIndex];
         questionText.textContent = currentQuestion.question;
@@ -50,7 +32,6 @@ const quizData = [
       }
       
   
-  // Handle option click event
   function handleOptionClick(selectedOption) {
     const currentQuestion = quizData[currentQuestionIndex];
     
@@ -77,15 +58,15 @@ const quizData = [
     }
   });
   
-  // Show final score
   function showResults() {
     questionText.textContent = "Quiz Completed!";
     optionsList.innerHTML = "";
     scoreDisplay.textContent = `Your score: ${score} / ${quizData.length}`;
-    nextBtn.style.display = "none"; // Hide the Next button
+    nextBtn.style.display = "none"; 
   }
   
-  // Initialize the quiz
   loadQuestion();
+
   nextBtn.style.display = "none"; 
   
+
